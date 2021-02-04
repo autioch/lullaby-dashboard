@@ -1,36 +1,93 @@
 {
-  "name": "lullaby-dashboard",
+  "name": "qb-lullaby-dashboard",
   "version": "1.0.0",
-  "description": "Application for parents - organize child's nap/sleep time",
-  "main": "src/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot -d",
-    "build": "webpack -p"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/inka3inka/lullaby-dashboard.git"
-  },
-  "author": "Paulina Kaczanowska",
+  "description": "Lullaby dashboard",
+  "keywords": [
+    "movie-list",
+    "movie",
+    "item-list",
+    "item-browser"
+  ],
+  "homepage": "",
+  "author": "autioch",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/inka3inka/lullaby-dashboard/issues"
-  },
-  "homepage": "https://github.com/inka3inka/lullaby-dashboard#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^0.28.11",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  },
+  "main": "index.js",
   "dependencies": {
-    "core-js-pure": "^3.6.4"
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "antd": "^4.9.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-virtualized": "^9.22.3",
+    "sass": "^1.30.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint": "eslint ./src --fix --ext .js & exit 0",
+    "lint:sass": "sass-lint -c .sass-lint.yml -v -q & exit 0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "qb"
+    ],
+    "rules": {
+      "max-len": [
+        0
+      ],
+      "id-blacklist": [
+        "off"
+      ],
+      "no-empty-function": [
+        "off"
+      ],
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false,
+          "variables": true,
+          "classes": true
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": false
+        }
+      ],
+      "no-undefined": [
+        "off"
+      ],
+      "no-inline-comments": [
+        "off"
+      ],
+      "line-comment-position": [
+        "off"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-qb": "^1.0.0"
   }
 }

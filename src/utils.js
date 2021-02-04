@@ -1,47 +1,44 @@
-const clock = document.querySelector('.clock');
-const container = document.querySelector('.container');
-const list = document.querySelector('.list');
-const listElements = document.querySelector('.list-elements');
-const video = document.querySelector('.video');
-// const listName = document.querySelector('.list-name');
-// const addTaskButton = document.querySelector('.button__add-task');
-// const listInput = document.querySelector('.list-input');
-const selectList = document.querySelector('.select-list');
+import { HTTP_OK, HTTP_ERROR } from './consts';
+import { useEffect, useRef } from 'react';
 
-//Load youtube video
-export function loadVideo(data) {
-  video.setAttribute("src", data.embeddedYoutubeVideo + '?autoplay=1')
+export function useInterval(callback, delay) {
+  const savedCallback = useRef(callback);
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  });
+
+  useEffect(() => {
+    const tick = () => savedCallback.current();
+
+    if (typeof delay === 'number') {
+      const id = setInterval(tick, delay);
+
+      return () => clearInterval(id);
+    }
+
+    return undefined; // eslint-disable-line consistent-return
+  }, [delay]);
 }
 
-//Load lists' options
+/**
+ * Fetches and parsed Json from given url. Window.fetch is not supported in some browsers.
+ * @param  {String} url Address to query for data.
+ * @return {Promise}    Promise resolving to parsed data recieved in the request.
+ */
+export function fetchJson(url) {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
 
-export function select(data) {
-  data.savedLists.forEach((list,idx) => {
-    const newElement = document.createElement("option");
-    newElement.setAttribute("value", idx);
-    newElement.textContent = list.label;
-
-    selectList.appendChild(newElement);
-  })
-
-}
-// Load to do list
-export function loadList(list) {
-  listElements.innerText = "";
-
-  //List background
-  container.style.backgroundColor = list.backgroundListColor;
-
-  //List elements
-  list.toDos.forEach(element => {
-    const newElement = document.createElement("li");
-
-    newElement.style.color = element.color;
-    newElement.classList.add("list-element");
-    newElement.textContent = element.name;
-    newElement.addEventListener("click", (event) => event.target.classList.toggle("checked"));
-
-    listElements.appendChild(newElement);
-  })
-
+    request.onload = function() { // eslint-disable-line func-names
+      if (request.status >= HTTP_OK && request.status < HTTP_ERROR) {
+        resolve(JSON.parse(this.responseText));
+      } else {
+        reject(request.statusText);
+      }
+    };
+    request.onerror = reject;
+    request.open('GET', url, true);
+    request.send();
+  });
 }
