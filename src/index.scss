@@ -1,0 +1,16 @@
+:focus {
+  outline: none;
+}
+
+//sass-lint:disable no-vendor-prefixes
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {}
+
+::-webkit-scrollbar-thumb {}

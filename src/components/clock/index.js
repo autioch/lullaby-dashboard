@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useInterval } from '../../utils';
+import './index.scss';
 
 const CLOCK_UPDATE = 1000;
 const PAD_LENGTH = 2;
@@ -13,9 +14,8 @@ function getTime() {
   const date = new Date();
   const hours = formatPart(date.getHours());
   const minutes = formatPart(date.getMinutes());
-  const seconds = formatPart(date.getSeconds());
 
-  return `${hours}:${minutes}:${seconds}`;
+  return `${hours}:${minutes}`;
 }
 
 export default function Clock() {
