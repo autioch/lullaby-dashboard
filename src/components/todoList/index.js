@@ -18,7 +18,6 @@ function Item({ item: { id, name, color }, isChecked, dispatch }) { // eslint-di
 
 export default function TodoList() {
   const [state, dispatch] = useStore();
-
   const { todos, checkedTodoIds } = state;
 
   return (

@@ -1,0 +1,55 @@
+.c-editor__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .2);
+}
+
+.c-editor {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  bottom: 5vh;
+  left: 5vh;
+  background: #fafafa;
+  border-radius: 1vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-editor__header {
+  border-bottom: solid 1px #ccc;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.c-editor__title {
+  flex: auto;
+  text-align: center;
+}
+
+.c-editor__close {
+  margin: -1vh;
+  padding: 1vh 2vh;
+  cursor: pointer;
+}
+
+.c-editor__footer {
+  border-top: solid 1px #ccc;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.c-editor__content {
+  flex: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

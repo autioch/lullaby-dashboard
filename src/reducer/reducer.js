@@ -1,16 +1,20 @@
 import {
   LISTS_SET,
   LIST_SELECT,
+  LIST_ADD,
   LOADING,
-  TODO_SET_CHECKED
+  TODO_SET_CHECKED,
+  EDITION_TOGGLE
 } from './actionTypes';
 
 export const initialState = {
   lists: [],
   isLoading: false,
-  videoUrl: '',
-  listId: null,
   checkedTodoIds: {},
+  isEditing: false,
+
+  listId: null,
+  videoUrl: '',
   todos: []
 };
 
@@ -62,6 +66,30 @@ export function reducer(state, action) { // eslint-disable-line max-statements
           ...checkedTodoIds,
           [todoId]: isChecked === undefined ? !checkedTodoIds[todoId] : isChecked
         }
+      };
+    }
+
+    case EDITION_TOGGLE: {
+      const { isEditing } = payload;
+
+      return {
+        ...state,
+        isEditing: isEditing === undefined ? !state.isEditing : isEditing
+      };
+    }
+
+    case LIST_ADD: {
+      return {
+        ...state,
+        lists: [...state.lists, {
+          label: 'New list',
+          id: new Date().getTime().toString(),
+          videoUrl: 'https://www.youtube.com/embed/XULUBg_ZcAU',
+          appBackgroundColor: '#000000',
+          backgroundListColor: '#212121',
+          fontListColor: '#f1f1f1',
+          toDos: []
+        }]
       };
     }
 

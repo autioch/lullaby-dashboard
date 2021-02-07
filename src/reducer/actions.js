@@ -1,8 +1,10 @@
 import {
   LISTS_SET,
   LIST_SELECT,
+  LIST_ADD,
   LOADING,
-  TODO_SET_CHECKED
+  TODO_SET_CHECKED,
+  EDITION_TOGGLE
 } from './actionTypes';
 
 export function actionListsSet(lists) {
@@ -39,5 +41,21 @@ export function actionTodoSetChecked(todoId, isChecked) {
       todoId,
       isChecked
     }
+  };
+}
+
+export function actionEditionToggle(isEditing) {
+  return {
+    type: EDITION_TOGGLE,
+    payload: {
+      isEditing
+    }
+  };
+}
+
+export function actionListAdd() {
+  return {
+    type: LIST_ADD,
+    payload: {}
   };
 }

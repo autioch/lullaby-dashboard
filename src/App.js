@@ -4,11 +4,12 @@ import Loader from './components/loader';
 import Clock from './components/clock';
 import Video from './components/video';
 import TodoList from './components/todoList';
+import Editor from './components/editor';
 
-import { actionLoading, actionListsSet, actionListSelect } from './reducer';
+import { actionLoading, actionListsSet, actionListSelect, actionEditionToggle } from './reducer';
 import { fetchJson } from './utils';
 import { useStore } from './store';
-import { Select } from 'antd';
+import { Button, Select } from 'antd';
 import 'antd/dist/antd.css';
 import './App.scss';
 
@@ -16,7 +17,7 @@ const { Option } = Select; // eslint-disable-line no-shadow
 
 export default function App() {
   const [state, dispatch] = useStore();
-  const { isLoading, lists, listId } = state;
+  const { isLoading, isEditing, lists, listId } = state;
 
   useEffect(() => {
     dispatch(actionLoading(true));
@@ -47,7 +48,9 @@ export default function App() {
         <Select value={listId} onChange={(selectedId) => dispatch(actionListSelect(selectedId))} >
           {lists.map(({ id, label }) => <Option key={id} value={id}>{label}</Option>)}
         </Select>
+        <Button onClick={() => dispatch(actionEditionToggle(true))}>Edit</Button>
       </div>
+      {isEditing ? <Editor /> : ''}
     </div>
   );
 }
