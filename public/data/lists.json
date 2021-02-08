@@ -8,35 +8,35 @@
     "fontListColor": "#f1f1f1",
     "toDos": [
       {
-        "name": "Woda do kąpieli",
+        "label": "Woda do kąpieli",
         "color": "#f1f1f1"
       },
       {
-        "name": "Uszy wytrzeć",
+        "label": "Uszy wytrzeć",
         "color": "#f1f1f1"
       },
       {
-        "name": "Witamina D",
+        "label": "Witamina D",
         "color": "#f1f1f1"
       },
       {
-        "name": "Czesanie włosów",
+        "label": "Czesanie włosów",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kolacja",
+        "label": "Kolacja",
         "color": "#f1f1f1"
       },
       {
-        "name": "Okna i rolety",
+        "label": "Okna i rolety",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kocia kolacja",
+        "label": "Kocia kolacja",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kocie zabawki",
+        "label": "Kocie zabawki",
         "color": "#f1f1f1"
       }
     ]
@@ -50,63 +50,63 @@
     "fontListColor": "#f1f1f1",
     "toDos": [
       {
-        "name": "Wózek",
+        "label": "Wózek",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kapcie",
+        "label": "Kapcie",
         "color": "#f1f1f1"
       },
       {
-        "name": "Klucze dla Ani",
+        "label": "Klucze dla Ani",
         "color": "#f1f1f1"
       },
       {
-        "name": "Ubrania do spania i na zmianę",
+        "label": "Ubrania do spania i na zmianę",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kosmetyki do mycia",
+        "label": "Kosmetyki do mycia",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kosmetyki do makijażu",
+        "label": "Kosmetyki do makijażu",
         "color": "#f1f1f1"
       },
       {
-        "name": "Pieluchy",
+        "label": "Pieluchy",
         "color": "#f1f1f1"
       },
       {
-        "name": "1 słoiczek jedzenia",
+        "label": "1 słoiczek jedzenia",
         "color": "#f1f1f1"
       },
       {
-        "name": "Chusteczki",
+        "label": "Chusteczki",
         "color": "#f1f1f1"
       },
       {
-        "name": "Podkłady",
+        "label": "Podkłady",
         "color": "#f1f1f1"
       },
       {
-        "name": "Maść na oparzenia",
+        "label": "Maść na oparzenia",
         "color": "#f1f1f1"
       },
       {
-        "name": "Zabawka do kąpieli",
+        "label": "Zabawka do kąpieli",
         "color": "#f1f1f1"
       },
       {
-        "name": "Instrukcja do kotów",
+        "label": "Instrukcja do kotów",
         "color": "#f1f1f1"
       },
       {
-        "name": "Kocie wędki",
+        "label": "Kocie wędki",
         "color": "#f1f1f1"
       },
       {
-        "name": "Chrupki i puszki dla kotów",
+        "label": "Chrupki i puszki dla kotów",
         "color": "#f1f1f1"
       }
     ]

@@ -2,7 +2,7 @@ import { useStore } from '../../store';
 import { actionTodoSetChecked } from '../../reducer';
 import './index.scss';
 
-function Item({ item: { id, name, color }, isChecked, dispatch }) { // eslint-disable-line no-shadow
+function Item({ item: { id, label, color }, isChecked, dispatch }) { // eslint-disable-line no-shadow
   return (
     <div
       className={`c-todo-list-item${isChecked ? ' is-checked' : ''}`}
@@ -11,7 +11,7 @@ function Item({ item: { id, name, color }, isChecked, dispatch }) { // eslint-di
       }}
       onClick={() => dispatch(actionTodoSetChecked(id))}
     >
-      {name}
+      {label}
     </div>
   );
 }

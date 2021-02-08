@@ -1,10 +1,17 @@
 import {
-  LISTS_SET,
-  LIST_SELECT,
+  EDITION_TOGGLE,
+
+  ITEM_ADD,
+  ITEM_EDIT,
+  ITEM_REMOVE,
+  ITEM_SET_CHECKED,
+
   LIST_ADD,
-  LOADING,
-  TODO_SET_CHECKED,
-  EDITION_TOGGLE
+  LIST_EDIT,
+  LIST_SELECT,
+  LISTS_SET,
+
+  LOADING
 } from './actionTypes';
 
 export const initialState = {
@@ -27,7 +34,13 @@ export function reducer(state, action) { // eslint-disable-line max-statements
 
       return {
         ...state,
-        lists
+        lists: lists.map((list) => ({
+          ...list,
+          toDos: list.toDos.map((item, index) => ({
+            ...item,
+            id: item.id ?? index
+          }))
+        }))
       };
     }
 
@@ -40,10 +53,7 @@ export function reducer(state, action) { // eslint-disable-line max-statements
         ...state,
         listId,
         videoUrl,
-        todos: toDos.map((item, index) => ({
-          ...item,
-          id: item.id ?? index
-        }))
+        todos: toDos
       };
     }
 
@@ -56,7 +66,7 @@ export function reducer(state, action) { // eslint-disable-line max-statements
       };
     }
 
-    case TODO_SET_CHECKED: {
+    case ITEM_SET_CHECKED: {
       const { todoId, isChecked } = payload;
       const { checkedTodoIds } = state;
 
@@ -90,6 +100,91 @@ export function reducer(state, action) { // eslint-disable-line max-statements
           fontListColor: '#f1f1f1',
           toDos: []
         }]
+      };
+    }
+
+    case LIST_EDIT: {
+      const { list: listToEdit } = payload;
+
+      return {
+        ...state,
+        lists: state.lists.map((list) => {
+          if (list.id !== listToEdit.id) {
+            return list;
+          }
+
+          return {
+            ...list,
+            ...listToEdit
+          };
+        })
+      };
+    }
+
+    case ITEM_ADD: {
+      const { listId } = payload;
+
+      return {
+        ...state,
+        lists: state.lists.map((list) => {
+          if (list.id !== listId) {
+            return list;
+          }
+
+          return {
+            ...list,
+            toDos: [...list.toDos, {
+              id: new Date().getTime().toString(),
+              label: 'New todo',
+              color: '#ffffff'
+            }]
+          };
+        })
+      };
+    }
+
+    case ITEM_EDIT: {
+      const { listId, item } = payload;
+
+      return {
+        ...state,
+        lists: state.lists.map((list) => {
+          if (list.id !== listId) {
+            return list;
+          }
+
+          return {
+            ...list,
+            toDos: list.toDos.map((todo) => {
+              if (todo.id !== item.id) {
+                return todo;
+              }
+
+              return {
+                ...todo,
+                ...item
+              };
+            })
+          };
+        })
+      };
+    }
+
+    case ITEM_REMOVE: {
+      const { listId, itemId } = payload;
+
+      return {
+        ...state,
+        lists: state.lists.map((list) => {
+          if (list.id !== listId) {
+            return list;
+          }
+
+          return {
+            ...list,
+            toDos: list.toDos.filter((todo) => todo.id !== itemId)
+          };
+        })
       };
     }
 

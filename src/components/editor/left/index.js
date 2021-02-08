@@ -23,7 +23,7 @@ export default function EditorLeft({ lists, setSelectedId, dispatch }) {
       <div
         className="c-editor-left__item is-sticky"
         onClick={() => dispatch(actionListAdd())}
-      >+ Add</div>
+      >+ Add List</div>
     </div>
   );
 }

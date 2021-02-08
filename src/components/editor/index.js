@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { actionEditionToggle } from '../../reducer';
 import './index.scss';
 
-export default function Editor() {
+export default function Editor({ listId }) {
   const [state, dispatch] = useStore();
-  const [selectedId, setSelectedId] = useState();
+  const [selectedId, setSelectedId] = useState(listId);
   const { lists } = state;
   const selectedList = lists.find((list) => list.id === selectedId);
 
@@ -19,8 +19,8 @@ export default function Editor() {
           <div className="c-editor__close" onClick={() => dispatch(actionEditionToggle(false))}>X</div>
         </div>
         <div className="c-editor__content">
-          <Left lists={lists} setSelectedId={setSelectedId} dispatch={dispatch}/>
-          <Right list={selectedList} />
+          <Left dispatch={dispatch} lists={lists} setSelectedId={setSelectedId}/>
+          <Right dispatch={dispatch} list={selectedList} />
         </div>
         <div className="c-editor__footer">
           <div className="c-editor__close" onClick={() => dispatch(actionEditionToggle(false))}>Close</div>

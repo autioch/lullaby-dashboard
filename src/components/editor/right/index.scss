@@ -1,0 +1,52 @@
+.c-editor-right {
+  flex: auto;
+  padding: 1em;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .ant-input {
+    margin-bottom: 1em;
+    flex: none;
+  }
+}
+
+.c-editor-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1em 0;
+}
+
+.c-editor-item__color {
+  margin-right: 1em;
+  padding: 0;
+  // todo set after/before to the current color of the input
+}
+
+.c-editor-colors {
+  display: flex;
+  justify-content: space-around;
+  flex: none;
+}
+
+.c-editor-list-items {
+  overflow: auto;
+  // overflow: hidden;
+  // flex: 1 1 auto;
+}
+
+.c-editor-list-items__content {
+  overflow: auto;
+}
+
+.c-editor-item__remove {
+  width: 2em;
+  height: 2em;
+  margin: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import Loader from './components/loader';
 import Clock from './components/clock';
-import Video from './components/video';
+
+// import Video from './components/video';
 import TodoList from './components/todoList';
 import Editor from './components/editor';
 
@@ -43,14 +44,14 @@ export default function App() {
         <TodoList/>
       </div>
       <div className="app-section">
-        <Video/>
+        {/* <Video/>*/}
         <Clock/>
         <Select value={listId} onChange={(selectedId) => dispatch(actionListSelect(selectedId))} >
           {lists.map(({ id, label }) => <Option key={id} value={id}>{label}</Option>)}
         </Select>
         <Button onClick={() => dispatch(actionEditionToggle(true))}>Edit</Button>
       </div>
-      {isEditing ? <Editor /> : ''}
+      {isEditing ? <Editor listId={listId}/> : ''}
     </div>
   );
 }
