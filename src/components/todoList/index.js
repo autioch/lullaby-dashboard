@@ -2,12 +2,12 @@ import { useStore } from '../../store';
 import { actionTodoSetChecked } from '../../reducer';
 import './index.scss';
 
-function Item({ item: { id, label, color }, isChecked, dispatch }) { // eslint-disable-line no-shadow
+function Item({ item: { id, label, fontColor }, isChecked, dispatch }) { // eslint-disable-line no-shadow
   return (
     <div
       className={`c-todo-list-item${isChecked ? ' is-checked' : ''}`}
       style={{
-        color
+        color: fontColor
       }}
       onClick={() => dispatch(actionTodoSetChecked(id))}
     >
@@ -18,11 +18,12 @@ function Item({ item: { id, label, color }, isChecked, dispatch }) { // eslint-d
 
 export default function TodoList() {
   const [state, dispatch] = useStore();
-  const { todos, checkedTodoIds } = state;
+  const { todos, checkedTodoIds, listId } = state;
+  const currentTodos = todos.filter((todo) => todo.listId === listId);
 
   return (
     <div className="c-todo-list">
-      {todos.map((item) => <Item key={item.id} item={item} isChecked={checkedTodoIds[item.id]} dispatch={dispatch}/>)}
+      {currentTodos.map((item) => <Item key={item.id} item={item} isChecked={checkedTodoIds[item.id]} dispatch={dispatch}/>)}
     </div>
   );
 }

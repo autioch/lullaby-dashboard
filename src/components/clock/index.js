@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useInterval } from '../../utils';
 import './index.scss';
 
-const CLOCK_UPDATE = 1000;
+const CLOCK_UPDATE = 10000;
 const PAD_LENGTH = 2;
 const PAD_FILL = '0';
 

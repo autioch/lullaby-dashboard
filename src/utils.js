@@ -42,3 +42,20 @@ export function fetchJson(url) {
     request.send();
   });
 }
+
+const UUIDV4_TEMPLATE = '10000000-1000-4000-8000-100000000000'; // [1e7] + -1e3 + -4e3 + -8e3 + -1e11
+const UUIDV4_REGEX = /[018]/g;
+const UUIDV4_UINT8 = new Uint8Array(1);
+// eslint-disable-next-line no-magic-numbers, no-bitwise, no-mixed-operators
+const UUIDV4_REPLACE = (co) => (co ^ crypto.getRandomValues(UUIDV4_UINT8)[0] & 15 >> co / 4).toString(16);
+
+/**
+ * Returns a random v4 UUID of the form xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx,
+ * where each x is replaced with a random hexadecimal digit from 0 to f,
+ * and y is replaced with a random hexadecimal digit from 8 to b.
+ * @return {String} UUIDv4
+ */
+
+export function uuidv4() {
+  return UUIDV4_TEMPLATE.replace(UUIDV4_REGEX, UUIDV4_REPLACE);
+}

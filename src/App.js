@@ -7,7 +7,7 @@ import Clock from './components/clock';
 import TodoList from './components/todoList';
 import Editor from './components/editor';
 
-import { actionLoading, actionListsSet, actionListSelect, actionEditionToggle } from './reducer';
+import { actionLoading, actionDataSet, actionListSelect, actionEditionToggle } from './reducer';
 import { fetchJson } from './utils';
 import { useStore } from './store';
 import { Button, Select } from 'antd';
@@ -19,20 +19,27 @@ const { Option } = Select; // eslint-disable-line no-shadow
 export default function App() {
   const [state, dispatch] = useStore();
   const { isLoading, isEditing, lists, listId } = state;
+  const currentList = lists.find((list) => list.id === listId) ?? {};
+  const { fontColor, backgroundColor } = currentList;
 
   useEffect(() => {
     dispatch(actionLoading(true));
 
-    fetchJson(`data/lists.json`)
-      .then((newLists) => {
-        dispatch(actionListsSet(newLists));
-        dispatch(actionListSelect(newLists?.[0].id));
+    fetchJson(`data/data.json`)
+      .then((data) => {
+        dispatch(actionDataSet(data));
+        dispatch(actionListSelect(data.lists?.[0].id));
         dispatch(actionLoading(false));
       });
 
     // empty array to make this effect run only once
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    document.body.style.color = fontColor;
+    document.body.style.background = backgroundColor;
+  }, [fontColor, backgroundColor]);
 
   if (isLoading) {
     return (<Loader/>);

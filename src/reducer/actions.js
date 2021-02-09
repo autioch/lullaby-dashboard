@@ -1,52 +1,24 @@
 import {
+  DATA_SET,
   EDITION_TOGGLE,
-
-  ITEM_ADD,
-  ITEM_EDIT,
-  ITEM_REMOVE,
-  ITEM_SET_CHECKED,
+  LOADING,
 
   LIST_ADD,
   LIST_EDIT,
+  LIST_REMOVE,
   LIST_SELECT,
-  LISTS_SET,
 
-  LOADING
+  TODO_ADD,
+  TODO_EDIT,
+  TODO_REMOVE,
+  TODO_SET_CHECKED
 } from './actionTypes';
 
-export function actionListsSet(lists) {
+export function actionDataSet(data) {
   return {
-    type: LISTS_SET,
+    type: DATA_SET,
     payload: {
-      lists
-    }
-  };
-}
-
-export function actionListSelect(listId) {
-  return {
-    type: LIST_SELECT,
-    payload: {
-      listId
-    }
-  };
-}
-
-export function actionLoading(isLoading) {
-  return {
-    type: LOADING,
-    payload: {
-      isLoading
-    }
-  };
-}
-
-export function actionTodoSetChecked(todoId, isChecked) {
-  return {
-    type: ITEM_SET_CHECKED,
-    payload: {
-      todoId,
-      isChecked
+      data
     }
   };
 }
@@ -56,6 +28,15 @@ export function actionEditionToggle(isEditing) {
     type: EDITION_TOGGLE,
     payload: {
       isEditing
+    }
+  };
+}
+
+export function actionLoading(isLoading) {
+  return {
+    type: LOADING,
+    payload: {
+      isLoading
     }
   };
 }
@@ -76,31 +57,57 @@ export function actionListEdit(list) {
   };
 }
 
-export function actionItemAdd(listId) {
+export function actionListRemove(listId) {
   return {
-    type: ITEM_ADD,
+    type: LIST_REMOVE,
     payload: {
       listId
     }
   };
 }
 
-export function actionItemEdit(listId, item) {
+export function actionListSelect(listId) {
   return {
-    type: ITEM_EDIT,
+    type: LIST_SELECT,
     payload: {
-      listId,
+      listId
+    }
+  };
+}
+
+export function actionTodoAdd(listId) {
+  return {
+    type: TODO_ADD,
+    payload: {
+      listId
+    }
+  };
+}
+
+export function actionTodoEdit(item) {
+  return {
+    type: TODO_EDIT,
+    payload: {
       item
     }
   };
 }
 
-export function actionItemRemove(listId, itemId) {
+export function actionTodoRemove(itemId) {
   return {
-    type: ITEM_REMOVE,
+    type: TODO_REMOVE,
     payload: {
-      listId,
       itemId
+    }
+  };
+}
+
+export function actionTodoSetChecked(todoId, isChecked) {
+  return {
+    type: TODO_SET_CHECKED,
+    payload: {
+      todoId,
+      isChecked
     }
   };
 }

@@ -43,10 +43,15 @@
 }
 
 .c-editor-item__remove {
-  width: 2em;
+  width: 3em;
   height: 2em;
   margin: 0 1em;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
+  border-radius: 3px;
+
+  &:hover {
+    background: #ddd;
+  }
 }

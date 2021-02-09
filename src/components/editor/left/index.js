@@ -1,13 +1,13 @@
 import { actionListAdd } from '../../../reducer';
 import './index.scss';
 
-function Item({ setSelectedId, item: { id, label, backgroundListColor, fontListColor } }) {
+function Item({ setSelectedId, item: { id, label, backgroundColor, fontColor } }) {
   return (
     <div
       className="c-editor-left__item"
       style={{
-        color: fontListColor,
-        backgroundColor: backgroundListColor
+        color: fontColor,
+        backgroundColor
       }}
       onClick={() => setSelectedId(id)}
     >

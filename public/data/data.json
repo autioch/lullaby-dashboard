@@ -1,0 +1,158 @@
+{
+  "lists": [
+    {
+      "id": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d",
+      "label": "Wieczorny rytuał",
+      "videoUrl": "https://www.youtube.com/embed/XULUBg_ZcAU",
+      "backgroundColor": "#000000",
+      "fontColor": "#f1f1f1"
+    },
+    {
+      "id": "2276c7b8-15a3-4999-9785-ce9771d1a2cc",
+      "label": "Wyjazd",
+      "videoUrl": "https://www.youtube.com/embed/XULUBg_ZcAU",
+      "backgroundColor": "#aaaaaa",
+      "fontColor": "#f1f1f1"
+    }
+  ],
+  "todos": [
+    {
+      "id": "025fe678-d3d5-4658-ab34-ccd659a8d7d3",
+      "label": "Woda do kąpieli",
+      "fontColor": "#00ff00",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "21dd9d7e-86d1-4a04-9ecc-bffa96dfa2df",
+      "label": "Uszy wytrzeć",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "277b9fe2-cebf-414a-a3a7-66bce8d3dbbb",
+      "label": "Witamina D",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "5285e95d-37da-4bbb-a42a-df5828963814",
+      "label": "Czesanie włosów",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "20c66288-ada5-4704-9ca1-991ed79c01a7",
+      "label": "Kolacja",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "0eb0f1f4-1215-48e6-a25c-fc5c321c28f3",
+      "label": "Okna i rolety",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "64b795a3-fdb9-42bc-82f7-d64ac82aabf1",
+      "label": "Kocia kolacja",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "1c4be829-6ef4-4a84-a835-c2499f2ad230",
+      "label": "Kocie zabawki",
+      "fontColor": "#f1f1f1",
+      "listId": "66c11cfb-f53d-4ac6-b7b2-b3a773b5710d"
+    },
+    {
+      "id": "981ac107-8e42-4163-aa96-cc0e7999f513",
+      "label": "Wózek",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "fc2cab5a-2897-404a-940f-97f4c9e2fe78",
+      "label": "Kapcie",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "b2c369df-c83e-4b46-bdf6-8e123a94cf51",
+      "label": "Klucze dla Ani",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "33a11a3f-fd2c-4f93-bcfe-92b26c1e5055",
+      "label": "Ubrania do spania i na zmianę",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "fa7290f8-273d-4253-b296-5b44988bef33",
+      "label": "Kosmetyki do mycia",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "3f34585c-e196-40f0-82ac-b466c730823b",
+      "label": "Kosmetyki do makijażu",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "a864d2f7-e1cc-4210-9aa1-5b3522004393",
+      "label": "Pieluchy",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "1156b32a-da2f-4562-82de-3439dc8639b9",
+      "label": "1 słoiczek jedzenia",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "ffa9771f-292c-4716-8f3a-dd1dfe433de1",
+      "label": "Chusteczki",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "3c4729d9-35e2-4dc2-b1e9-ec81658bbab1",
+      "label": "Podkłady",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "6d092b26-7f6b-487d-aa2a-d5129ab51e19",
+      "label": "Maść na oparzenia",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "d13972a1-b360-4460-9fe8-a8a8620b9d71",
+      "label": "Zabawka do kąpieli",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "6d98cc69-5be4-422f-bc63-34b2416d1ff2",
+      "label": "Instrukcja do kotów",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "3ccec903-7aeb-4496-9026-875856eb568c",
+      "label": "Kocie wędki",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    },
+    {
+      "id": "1e0c770d-40be-4e47-a8e0-c6619aeca611",
+      "label": "Chrupki i puszki dla kotów",
+      "fontColor": "#f1f1f1",
+      "listId": "2276c7b8-15a3-4999-9785-ce9771d1a2cc"
+    }
+  ]
+}

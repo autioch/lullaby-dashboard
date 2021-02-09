@@ -8,8 +8,9 @@ import './index.scss';
 export default function Editor({ listId }) {
   const [state, dispatch] = useStore();
   const [selectedId, setSelectedId] = useState(listId);
-  const { lists } = state;
+  const { lists, todos } = state;
   const selectedList = lists.find((list) => list.id === selectedId);
+  const listTodos = todos.filter((todo) => todo.listId === selectedId);
 
   return (
     <div className="c-editor__overlay">
@@ -20,7 +21,7 @@ export default function Editor({ listId }) {
         </div>
         <div className="c-editor__content">
           <Left dispatch={dispatch} lists={lists} setSelectedId={setSelectedId}/>
-          <Right dispatch={dispatch} list={selectedList} />
+          <Right dispatch={dispatch} list={selectedList} todos={listTodos} />
         </div>
         <div className="c-editor__footer">
           <div className="c-editor__close" onClick={() => dispatch(actionEditionToggle(false))}>Close</div>
